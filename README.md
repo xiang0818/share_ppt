@@ -4,12 +4,15 @@
 
 ## Download
 
-[download in github](https://github.com/rfyiamcool/share_ppt/releases)
+[download in github](https://github.com/rfyiamcool/share_ppt/tags)
 
-## MENU
+## Agenda
 
+- [Qcon海量长连接消息推送系统实践](#Qcon海量长连接消息推送系统实践)
+- [网络编程那些事儿](#网络编程那些事儿)
+- [Golang项目实战](#Golang项目实战)
 - [Etcd的设计与实现](#Etcd的设计与实现)
-- [git的那些事儿](#git的那些事儿)
+- [git的那些事儿](#GIT的那些事儿)
 - [分布式消息推送](#分布式消息推送)
 - [Kafka的设计与实现](#Kafka的设计与实现)
 - [TCP的那些事儿](#TCP的那些事儿)
@@ -17,7 +20,7 @@
 - [GRPC的那些事儿](#GRPC的那些事儿)
 - [分布式任务系统](#分布式任务系统)
 - [优雅的编程者](#优雅的编程者)
-- [分布式行情推送系统(golang)](#分布式行情推送系统(golang))
+- [分布式行情推送系统(golang)](#分布式行情推送系统golang)
 - [Redis经验之谈](#Redis经验之谈)
 - [http2和quic的那些事儿](#http2和quic的那些事儿)
 - [kubernetes的那些事儿](#kubernetes的那些事儿)
@@ -39,6 +42,106 @@
 - [聊聊集群管理](#聊聊集群管理)
 
 ## LIST
+
+### Qcon海量长连接消息推送系统实践
+
+#### 分享时间
+
+2021-06-30
+#### 内容
+
+- 超百万的⻓连接接入
+- 每天近 100 亿条消息
+- 高峰值时每秒 70w+ 条消息 目标
+- 如何尽量保证消息的低延迟
+- 如何保证系统的高并发
+- 如何保证消息的可靠性
+- 如何保证系统的可用性
+- ...
+
+#### ppt地址
+
+[下载地址](qcon_push_service.pdf)
+
+#### 截图
+
+<img src="images/qcon_push_service01.jpg" width="70%">
+<img src="images/qcon_push_service02.jpg" width="70%">
+<img src="images/qcon_push_service03.jpg" width="70%">
+
+### 网络编程那些事儿
+
+#### 分享时间
+
+2021-12-16
+
+#### 内容
+
+- 收包发包原理, socket及阻塞非阻塞, 同步异步的本质
+- linux 五种IO模型
+- io多路复用模型
+  - select
+  - poll
+  - epoll
+    - 数据结构组成
+    - 如何使用 epoll 的那几个方法
+    - 从底层来讲解 epoll 的实现原理
+    - epolloneshot 的场景
+    - 水平触发和边缘触发到底是怎么一回事, 各种case来描述
+    - 社区中常见的服务端使用 epoll 哪种触发模型
+    - epoll 的开发技巧
+  - io_uring
+- aio 到底是怎么一回事？ 存在的问题
+- 当前社区比较流行的 网络编程 模型
+  - 新线程模型
+  - 单多路复用 + 业务线程池模型
+  - prefork 模型
+  - reactor
+  - proactor
+- 常见的网络编程问题
+  - 半连接全连接代表的意思，如何配置，不同内核参数下表现形式
+  - 常见的读写返回值的处理方式
+  - reuseaddr vs reuseport
+  - epoll 的惊群问题
+  - 粘包半包
+  - 半关闭
+  - 如何实现异步 connect
+  - 弱网络问题, kcp
+  - fork, exec, system 在继承传递 fd 的问题
+  - 如何实现网络服务的 upgrade
+  - 论心跳的重要性, 为什么使用应用层心跳
+  - 如何处理各种的网络异常问题
+
+#### ppt地址
+
+[下载地址](network_server.pdf)
+
+#### 截图
+
+<img src="images/network_server.jpg" width="70%">
+
+### Golang项目实战
+
+#### 分享时间
+
+2021-11-08
+
+#### 内容
+
+- 代码规范
+- 接口规范
+- Git规范
+- 常见设计模式
+- Golang开发经验
+- Golang编码技巧
+
+#### ppt地址
+
+[下载地址](golang_skills.pdf)
+
+#### 截图
+
+<img src="images/golang_skills.jpg" width="70%">
 
 ### Etcd的设计与实现
 
@@ -70,7 +173,7 @@
 
 <img src="images/etcd_cluster.jpg" width="70%">
 
-### GIT的哪儿事儿
+### GIT的那些事儿
 
 #### 分享时间
 
@@ -205,7 +308,7 @@
 
 <img src="images/drunbility_home.jpg" width="70%">
 
-### 分布式行情推送系统(golang)
+### 分布式行情推送系统golang
 
 #### 分享时间
 
